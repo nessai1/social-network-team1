@@ -1,6 +1,11 @@
-import './src/styles/global.css'
+import '../src/styles/global.css'
+import MainMenu from "../src/layouts/MainMenu";
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+      <MainMenu>
+      <Component {...pageProps} />
+      </MainMenu>
+  );
 }
