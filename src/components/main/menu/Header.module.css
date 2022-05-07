@@ -1,5 +1,45 @@
 .header {
-  background-color: red;
+  height: 100px;
+  width: 100%;
+  background-color: #0069FF;
+}
+
+.headerLogo {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 32px;
+  color: #FFFFFF;
+  margin-left: 50px;
+  margin-top: 25px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  float: left;
+}
+
+.headerControl {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.headerControl .avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+}
+.headerControl .arrow {
+  padding: 5px;
+  margin: 0 40px;
+  margin-right: 50px;
+  border: 1px solid #FFFFFF;
+  border-radius: 12px;
+}
+.headerControl .arrow img {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
 }
 
 /*# sourceMappingURL=Header.module.css.map */
