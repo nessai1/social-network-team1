@@ -2,7 +2,6 @@ import {ReactNode} from "react";
 
 import {Header} from "../components/main/menu/Header";
 import styles from "./MainMenu.module.scss";
-import {Plato} from "../components/main/base/Plato";
 import {Sidebar} from "../components/main/menu/sidebar/Sidebar";
 
 type TProps = {
