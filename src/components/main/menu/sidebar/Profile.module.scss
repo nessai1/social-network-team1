@@ -1,3 +1,27 @@
 .profile {
   padding: 25px;
+  display: flex;
+}
+
+.userInfo {
+  min-width:250px;
+  min-height: 50px;
+
+  margin-left: 20px;
+  display: block;
+  .text {
+    display: block;
+  }
+
+  .textName {
+    font-weight: bold;
+    font-size: 20px;
+    color: #031B4E;
+  }
+
+  .textLink {
+    color: #626B7D;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
