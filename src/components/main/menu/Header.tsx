@@ -15,8 +15,6 @@ export const Header = ({avatarUrl} : TProps) => {
         backgroundImage: 'url('+ avatarUrl +')',
     };
 
-    console.log(arrow);
-
     return (
         <div className={styles.header}>
             <span className={styles.headerLogo}>TeamOne</span>
