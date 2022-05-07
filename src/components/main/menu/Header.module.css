@@ -24,11 +24,6 @@
   align-items: center;
   margin-top: 20px;
 }
-.headerControl .avatar {
-  height: 60px;
-  width: 60px;
-  border-radius: 10px;
-}
 .headerControl .arrow {
   -ms-user-select: none;
   -moz-user-select: none;
