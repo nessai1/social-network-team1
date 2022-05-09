@@ -3,11 +3,13 @@ import styles from './Plato.module.scss';
 
 type TProps = {
     children: ReactNode,
+    style?: Object,
 }
 
 export const Plato = (props : TProps) => {
+
     return (
-        <div className={styles.plato}>
+        <div style={props.style} className={styles.plato}>
             {props.children}
         </div>
     )

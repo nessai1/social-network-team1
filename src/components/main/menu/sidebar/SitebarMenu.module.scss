@@ -1,0 +1,27 @@
+.linkBlock {
+  padding: 20px 30px;
+
+  color: #465370;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: inset 3px 0 #B7BAC0;
+  }
+
+  &_active {
+    color: #0069FF;
+    box-shadow: inset 3px 0 #0069FF !important;
+  }
+}
+
+.linksWrapper {
+  margin: 0;
+  padding: 10px 0;
+
+  li {
+    display: block;
+    list-style-type: none;
+  }
+}
