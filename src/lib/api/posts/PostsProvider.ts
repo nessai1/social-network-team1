@@ -2,16 +2,13 @@ import IProvider from "../interfaces/IProvider";
 import {TPost} from "./TPost";
 
 export default class PostsProvider implements IProvider {
-    getItem(id: number): TPost {
-        return {
-            id: 1,
-            userId: 12,
-            text: 'aa',
-            pictures: ['123']
-        };
+    async getItem(id: number): Promise<TPost> {
+        const response = await fetch(`http://localhost:4200/posts/${id}`);
+        return response.json();
     }
 
-    getItems(): Array<TPost> {
-        return [];
+    async getItems(): Promise<TPost[]> {
+        const response = await fetch(`http://localhost:4200/posts`);
+        return response.json();
     }
 }
