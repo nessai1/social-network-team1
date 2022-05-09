@@ -7,9 +7,8 @@ export const PostList = (props: any) => {
     const contentBlockId = 'cID';
 
     useEffect(() => {
-        setTimeout(() => {
-            document.querySelector(`#${contentBlockId}`).innerHTML = 'CONTENT LOADED';
-        }, 2000);
+
+        
 
     }, []);
 

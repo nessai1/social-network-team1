@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "json-server -w mock/database.json -p 4200 -d 500"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
