@@ -15,7 +15,8 @@ export default function MainMenu(props: TProps) {
             <Header avatarUrl='https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg'></Header>
             <div className={styles.content}>
                 <Sidebar avatarUrl={'https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg'} firstName={'Rebby'} lastName={'Sends'} uId={'rebsends'}/>
-                {props.children}
+                <div>{props.children}</div>
+                <div>right menu</div>
             </div>
         </>
     );

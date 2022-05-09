@@ -1,5 +1,7 @@
 .content {
   padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=MainMenu.module.css.map */

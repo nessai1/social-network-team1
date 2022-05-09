@@ -1,12 +1,8 @@
-import { NextPage } from "next";
-import {FeedList} from "../src/components/main/feed/FeedList";
+import {FeedList} from "../src/components/posts/FeedList";
+import {AppProps} from "next/app";
 
-const Feed: NextPage = () => {
-    return (
-        <>
-            <FeedList/>
-        </>
-    );
+function Feed() {
+    return <FeedList/>
 }
 
 export default Feed;
