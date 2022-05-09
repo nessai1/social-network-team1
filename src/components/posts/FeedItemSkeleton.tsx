@@ -2,15 +2,10 @@ import styles from "./PostList.module.scss";
 import ContentLoader from "react-content-loader";
 import React from "react";
 
-type TProps = {
-    skeletonId: string
-}
-
-export const FeedItemSkeleton = (props: TProps) => {
-    const skeletonId = 'skeleton-loader';
+export const FeedItemSkeleton = () => {
 
     return (
-        <div id={skeletonId}>
+        <div>
             <ContentLoader
                 speed={2}
                 width={980}
@@ -18,7 +13,6 @@ export const FeedItemSkeleton = (props: TProps) => {
                 viewBox="0 0 980 400"
                 backgroundColor="#f3f3f3"
                 foregroundColor="#ecebeb"
-                {...props}
             >
                 <rect x="77" y="18" rx="3" ry="3" width="178" height="12" />
                 <rect x="76" y="43" rx="3" ry="3" width="92" height="11" />

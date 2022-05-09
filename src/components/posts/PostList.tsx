@@ -1,9 +1,19 @@
-import React, {useEffect} from "react";
+import {useEffect, useState} from "react";
 import styles from "./PostList.module.scss";
 import {FeedItemSkeleton} from "./FeedItemSkeleton";
 import PostsProvider from "../../lib/api/posts/PostsProvider";
+import {TPost} from "../../lib/api/posts/TPost";
+import {PostCard} from "./PostCard";
 
-export const PostList = (props: any) => {
+type TProps = {
+    posts: TPost[],
+    isLoading: boolean
+}
+
+export const PostList = () => {
+
+    const [postsData, setPosts] = useState<TProps>({isLoading: true, posts: []});
+
     const skeletonId = 'skeleton-loader';
     const contentBlockId = 'cID';
 
@@ -11,20 +21,20 @@ export const PostList = (props: any) => {
 
         const postProvider = new PostsProvider();
         postProvider.getItems().then((posts) => {
-            const contentWrapper = document.querySelector(`#${contentBlockId}`);
-            if (!contentWrapper)
-                return;
-
-            contentWrapper.innerHTML = '';
-            posts.forEach((post) => {
-                contentWrapper.innerHTML += `<h5>${post.text}</h5>`
-            })
+            setPosts({isLoading: false, posts: posts});
         })
+
+        return () => {
+            console.log('delete trash');
+        }
     }, []);
 
     return (
         <div id={contentBlockId} className={styles.postListWrapper}>
-            <FeedItemSkeleton skeletonId={skeletonId}/>
+            {postsData.isLoading ?
+                <FeedItemSkeleton/>
+                : postsData.posts.map(post => (<PostCard key={post.id} post={post}/>))
+            }
         </div>
     )
 }
