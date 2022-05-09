@@ -10,10 +10,123 @@
         {
             "id": 2,
             "userId": 1,
-            "date": "05.08.2022 03:12",
+            "date": "02.08.2022 03:12",
             "text": "Сегодня побывала в горах краснадарского края. Зарядилась позитивным настроением и настроила свою ауру на позитивные и яркие эмоции!",
             "pictures": []
+        },
+        {
+            "id": 3,
+            "userId": 2,
+            "date": "05.08.2021 03:12",
+            "text": "Ну и жопа эта ваша социальная сеть",
+            "pictures": []
+        },
+        {
+            "id": 4,
+            "userId": 2,
+            "date": "04.13.2022 03:12",
+            "text": "Забавно конечно наблюдать за своими домашними животными",
+            "pictures": []
+        },
+        {
+            "id": 5,
+            "userId": 3,
+            "date": "05.10.2022 00:12",
+            "text": "Люблю хайп ✨✨и все что с ним связано\uD83D\uDE1C\uD83D\uDE1C, музыка элджей \uD83D\uDC95\uD83D\uDC95\uD83D\uDE0E\uD83D\uDC4Cлил пип\uD83D\uDE0D\uD83D\uDE0D\uD83D\uDE32 пошлая молли \uD83D\uDE08\uD83D\uDE08 гспд рейв монеточка) \uD83D\uDE06\uD83D\uDE06\uD83E\uDD18\nШмот вэнсы\uD83D\uDC97\uD83D\uDC97 толстовка трешер\uD83D\uDC55\uD83D\uDE47\uD83E\uDD24\nОбычно я хайплю\uD83D\uDE40\uD83D\uDE40, это мое хобби \uD83D\uDE39\uD83D\uDE39, сижу в топ паблосах \uD83D\uDC97овсянка, фоч\uD83C\uDF40, амдевс\uD83D\uDC08\nЕще я аморал\uD83D\uDC7A, нигилист\uD83D\uDC80, антисоцио\uD83D\uDE48, чайлдфри\uD83D\uDC79, анимешник\uD83D\uDE3D, смотрю на ютубчике моргенштерна\uD83E\uDD20,играю в pabg\uD83D\uDE05\nЕсли ты не хайп, не топ и не шаришь то не пиши мне ✋✋\uD83D\uDC4E\uD83D\uDE24",
+            "pictures": []
+        },
+        {
+            "id": 6,
+            "userId": 3,
+            "date": "03.10.2022 00:12",
+            "text": "Ну да бля, я не идеален, куда же мне до вас.",
+            "pictures": []
+        },
+        {
+            "id": 7,
+            "userId": 2,
+            "date": "06.04.2021 15:51",
+            "text": "Как хорошо что сегодня я не пошла на пары",
+            "pictures": []
+        },
+        {
+            "id": 8,
+            "userId": 1,
+            "date": "06.03.2020 15:51",
+            "text": "Самое время любить. \uD83E\uDDE1",
+            "pictures": []
+        },
+        {
+            "id": 9,
+            "userId": 1,
+            "date": "06.09.2020 15:51",
+            "text": "Когда ты меня оставил,\nЯ не искала замены - я тебя ждала.",
+            "pictures": []
+        },
+        {
+            "id": 10,
+            "userId": 3,
+            "date": "06.24.2021 14:51",
+            "text": "Eсть цвeты, которыe цветут рано, и eсть цветы, которыe цветут поздно. Думаю, люди pасцвeтают таĸ же.\n\nMинекo Ивaсaĸи, \"Путeшecтвиe гейши\"",
+            "pictures": []
+        },
+        {
+            "id": 11,
+            "userId": 3,
+            "date": "11.25.2020 14:51",
+            "text": "Я выpвусь из этиx вoсᴨoмиʜаʜий и стану счастливoй, oбещаю.",
+            "pictures": []
+        },
+        {
+            "id": 12,
+            "userId": 3,
+            "date": "11.25.2020 14:51",
+            "text": "Bсяĸая любoвь истиннa и пpeкpасна по-своемy, лишь бы тoлькo она была в сердце, а не в гoлoве.\n\n— Бeлинский",
+            "pictures": []
+        },
+        {
+            "id": 13,
+            "userId": 4,
+            "date": "11.25.2020 14:51",
+            "text": "Счастье любимoᴦo челоʙекa приносит ʜам гoраздo большe радoсти, чем ʜаше сᴏбствeʜʜᴏe.",
+            "pictures": []
+        },
+        {
+            "id": 14,
+            "userId": 1,
+            "date": "11.25.2020 14:51",
+            "text": "Нас чacто ждyт иᴍеʜʜo там, кyда мы воɜвращаться не хoтим.",
+            "pictures": []
+        },
+        {
+            "id": 15,
+            "userId": 3,
+            "date": "11.25.2020 14:51",
+            "text": "Дaй челoвеку второй шaнс - и он пoдаpит тебе тaĸой опыт, после котоpого ты не захочeшь никoмy давать и пeрвого шанса.",
+            "pictures": []
+        },
+        {
+            "id": 16,
+            "userId": 4,
+            "date": "11.25.2020 14:51",
+            "text": "Дороже ʙсeго мужчиʜe достаeтся тa жеʜщиʜа, которой ничегo не ʜадо․",
+            "pictures": []
+        },
+        {
+            "id": 17,
+            "userId": 2,
+            "date": "11.25.2020 14:51",
+            "text": "Мне не важно, есть ли y тeбя деньги, кто твои родитeли, cкoлькo ты будешь на меня тpатить... Мне гораздо важнee, eсть ли у тебя любовь кo мне, ĸтo я для тeбя, сколько ты захочeшь быть сo мнoй рядом.",
+            "pictures": []
+        },
+        {
+            "id": 18,
+            "userId": 4,
+            "date": "11.25.2020 14:51",
+            "text": "Cчaстье — это когдa ты еᴦо любишь, a ᴏн тeбя еще сильнее.",
+            "pictures": []
         }
+
     ],
 
     "users": [
@@ -22,6 +135,24 @@
             "firstName": "Rebby",
             "lastName": "Sends",
             "avatar": "https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg"
+        },
+        {
+            "id": 2,
+            "firstName": "Ангелина",
+            "lastName": "Давыдова",
+            "avatar": "https://wallbox.ru/resize/1024x1024/wallpapers/main/201134/micha-barton-simpopo-sexy-0ae852a.jpg"
+        },
+        {
+            "id": 3,
+            "firstName": "Миша",
+            "lastName": "Топский",
+            "avatar": "https://sun9-22.userapi.com/impf/c626629/v626629879/2da43/bJa7qrAXSO0.jpg?size=604x604&quality=96&sign=f5312c917e7163fa7c6a209b98af85e8&type=album"
+        },
+        {
+            "id": 4,
+            "firstName": "Саша",
+            "lastName": "Ковалева",
+            "avatar": "https://yandex-images.clstorage.net/4HOWS9206/22bb98f6d/d_CUZ6B-hRr5VZZdxWI3zca1enEJp6sR-N2tESnu7bukS5x5jOK2h1ghYLaAojyGOhax38xpaCQDCBj5Z4i-wSLVgEf4D9QXmRT3cOynV8TPnHpgbPb3aMTw6CFEr7SP3WeRAWmXtsZpaAn7HKIwokaqGVO1tY3c2siRFIqJ2vU3pLg21RZ9v_2lLtlUUseNs4GWTZV_l8DMxXGoxcKtcsxrKJnEEtoeISiJ9yn70d82_t0XlXnhrLK0HbgmVUp5f5SRSiEizZpNZUKR3AbPcV-1tkEJq58UxM29lN1OZV4sY7DlUOZulo2E7YdJ7_2rHtotnwE5pdgeJC0QEq3yreuMeT4JiinaNd3KyTwGYxXLXcIpCScr-PyB9XixUqWy8A9YDej6Jk5JZD3r1ccZ05oehbPthU0ksigxgKqllu0fDOnePfIxal2xot2M3iORrzlS0aV7d-BopTXU9dbRTlBLIOXMQrK2OXS1o_VDYc_CkjEPnSVZrMKwnSASUZaRZxhNKkXaNfpBgUYlRBI7uaPJWqUh7yv41CUZ1M32Kb7Ij4CR-G4epj1kgSPFf7VD1vK1k9UZmWQC3OX4ConGkT-4dSKZmolqtRU-0aR2q-GH1Vr5Ha9nrPj55cwhEkH-qPdEIWjmPuol_BVXfS8ph8L2he8pCXVo9swh0JahBilvUJUahdaJgvXVFkm4Zo9Zl8lKZRVfJ-CkUWFMwWIxJvQL0G20YjbKuXSJfwG_wb8-di1HuRUxoJ5IIQTqyc7lIyB1BllSxVpNIR4FDNYzCbMt_mklrx-sbEmx7L1OnSogP8wFQGLqlg3oja8Jqx0rYo796_mFFbDG0DH0Wi1Gle-Y6eqRTjmOOSFapRwStz037aZZcePbYIABiYQ5NhHCWKesTcRGEo7tLKnnRQOhL9JKPQuBicVYxuDlJIJp9sELZJEaLfZNKlndxilsPqdBWxVa5W2fb0jY0SlUcRKQ"
         }
     ]
 }
