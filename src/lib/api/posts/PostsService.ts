@@ -1,6 +1,6 @@
 import IProvider from "../interfaces/IProvider";
 import {TPost} from "./TPost";
-import UsersProvider from "../users/UsersProvider";
+import UsersService from "../users/UsersService";
 
 type TPostAPI = {
     id: number,
@@ -10,12 +10,12 @@ type TPostAPI = {
     pictures: Array<string>
 }
 
-export default class PostsProvider implements IProvider {
+export default class PostsService implements IProvider {
     async getItem(id: number): Promise<TPost> {
         const response = await fetch(`http://localhost:4200/posts/${id}`);
         const post = await response.json();
 
-        const userProvider = new UsersProvider();
+        const userProvider = new UsersService();
         post.user = await userProvider.getItem(post.userId);
         delete post.userId;
 
@@ -39,7 +39,7 @@ export default class PostsProvider implements IProvider {
         }
 
 
-        const userProvider = new UsersProvider();
+        const userProvider = new UsersService();
 
         return await Promise.all(posts.map(async (post: TPostAPI) => {
             const user = await userProvider.getItem(post.userId);

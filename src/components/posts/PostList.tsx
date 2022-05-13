@@ -1,8 +1,7 @@
 import {useEffect, useState} from "react";
 import styles from "./PostList.module.scss";
 import {FeedItemSkeleton} from "./FeedItemSkeleton";
-import PostsProvider from "../../lib/api/posts/PostsProvider";
-import {TPost} from "../../lib/api/posts/TPost";
+import {PostsService, TPost} from "../../lib/api";
 import {PostCard} from "./PostCard";
 
 type TProps = {
@@ -18,7 +17,7 @@ export const PostList = () => {
     useEffect(() => {
 
         const limit = 10;
-        const postProvider = new PostsProvider();
+        const postProvider = new PostsService();
         postProvider.getItems(0, limit).then((posts) => {
             let postsIsOver;
             postsIsOver = posts.length < limit;

@@ -1,6 +1,6 @@
 import IProvider from "../interfaces/IProvider";
 
-export default class UsersProvider implements IProvider {
+export default class UsersService implements IProvider {
     async getItem(id: number): Promise<Object> {
         const response = await fetch(`http://localhost:4200/users/${id}`);
         return response.json();
