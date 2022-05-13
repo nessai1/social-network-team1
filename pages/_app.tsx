@@ -1,14 +1,17 @@
-import '../src/styles/global.scss'
+import { SessionProvider, signIn } from "next-auth/react";
+import "../src/styles/global.scss";
 import MainMenu from "../src/layouts/MainMenu";
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { useEffect, useLayoutEffect } from "react";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-
-    const userId = 1;
-
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     return (
-        <MainMenu>
-            <Component {...pageProps} />
-        </MainMenu>
+        <SessionProvider session={session}>
+            <MainMenu>
+                <Component {...pageProps} />
+            </MainMenu>
+        </SessionProvider>
     );
 }
+
+export default MyApp;
