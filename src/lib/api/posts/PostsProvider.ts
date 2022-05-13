@@ -22,9 +22,22 @@ export default class PostsProvider implements IProvider {
         return post;
     }
 
-    async getItems(): Promise<TPost[]> {
+    async getItems(offset?: number, limit?: number): Promise<TPost[]> {
         const response = await fetch(`http://localhost:4200/posts`);
-        const posts = await response.json();
+        const jsonResponse = await response.json();
+
+        if (offset === undefined) {
+            offset = 0;
+        }
+
+        let posts;
+        if (limit === undefined) {
+            posts = jsonResponse.slice(offset);
+        }
+        else {
+            posts = jsonResponse.slice(offset, limit);
+        }
+
 
         const userProvider = new UsersProvider();
 

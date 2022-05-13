@@ -1,4 +1,4 @@
 export default interface IProvider {
-    getItems(): Promise<Object[]>,
+    getItems(offset?: number, limit?: number): Promise<Object[]>,
     getItem(id: number): Promise<Object>
 }

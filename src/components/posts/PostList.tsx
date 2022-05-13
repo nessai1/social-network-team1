@@ -7,34 +7,45 @@ import {PostCard} from "./PostCard";
 
 type TProps = {
     posts: TPost[],
-    isLoading: boolean
+    postsIsOver: boolean
 }
 
 export const PostList = () => {
 
-    const [postsData, setPosts] = useState<TProps>({isLoading: true, posts: []});
-
-    const skeletonId = 'skeleton-loader';
-    const contentBlockId = 'cID';
+    const [postsData, setPosts] = useState<TProps>({postsIsOver: false, posts: []});
+    const skeletonId = 'skeleton';
 
     useEffect(() => {
 
+        const limit = 10;
         const postProvider = new PostsProvider();
-        postProvider.getItems().then((posts) => {
-            setPosts({isLoading: false, posts: posts});
-        })
+        postProvider.getItems(0, limit).then((posts) => {
+            let postsIsOver;
+            postsIsOver = posts.length < limit;
+            setPosts({postsIsOver: postsIsOver, posts: posts});
+        });
 
+
+        const scrollListener = (event: Event) => {
+            const skeletonNode = document.querySelector(`#${skeletonId}`);
+            if (skeletonNode === null) {
+                window.removeEventListener('scroll', scrollListener);
+                return;
+            }
+
+            console.log(skeletonNode.getClientRects());
+        }
+
+        window.addEventListener('scroll', scrollListener);
         return () => {
-            console.log('delete trash');
+            window.removeEventListener('scroll', scrollListener);
         }
     }, []);
 
     return (
-        <div id={contentBlockId} className={styles.postListWrapper}>
-            {postsData.isLoading ?
-                <FeedItemSkeleton/>
-                : postsData.posts.map(post => (<PostCard key={post.id} post={post}/>))
-            }
+        <div className={styles.postListWrapper}>
+            {postsData.posts.map(post => (<PostCard key={post.id} post={post}/>))}
+            {postsData.postsIsOver ? '' : <div id={skeletonId}><FeedItemSkeleton/></div>}
         </div>
     )
 }
