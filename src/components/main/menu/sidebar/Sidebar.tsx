@@ -20,8 +20,6 @@ export const Sidebar = (user: TUserData) => {
                 name={fullName}
                 userId={user.uId}
             />
-            <button onClick={() => signIn()}>auth</button>
-            <button onClick={() => signOut()}>out</button>
             <SidebarMenu />
         </div>
     );
