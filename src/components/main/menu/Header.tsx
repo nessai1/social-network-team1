@@ -9,13 +9,11 @@ type TProps = {
 };
 
 export const Header = ({ avatarUrl }: TProps) => {
-    const { data: session } = useSession();
-
     return (
         <div className={styles.header}>
             <span className={styles.headerLogo}>TeamOne</span>
             <div className={styles.headerControl}>
-                <Avatar size={60} src={session.user.image} />
+                <Avatar size={60} src={avatarUrl} />
                 <button
                     className={styles.logoutButton}
                     onClick={() => signOut()}
