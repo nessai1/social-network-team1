@@ -29,22 +29,26 @@
 
   margin-top: 20px;
 
-  .arrow {
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
+  .logoutButton {
+    display: block;
 
-    padding: 5px;
-    margin: 0 40px;
-    margin-right: 50px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #FFFFFF;
+    border-radius: 8px;
 
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
-    img {
-      margin-left: 4px;
-      margin-right: 4px;
-      margin-top: 4px;
+    padding: 10px 20px;
+    margin: 0 30px;
+
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    &:hover {
+      border-color: #e2e2e2;
+      color: #e2e2e2;
+      transition: all 0.2s;
     }
   }
 }

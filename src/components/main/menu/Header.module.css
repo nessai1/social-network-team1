@@ -24,21 +24,22 @@
   align-items: center;
   margin-top: 20px;
 }
-.headerControl .arrow {
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  padding: 5px;
-  margin: 0 40px;
-  margin-right: 50px;
-  border: 1px solid #FFFFFF;
-  border-radius: 12px;
+.headerControl .logoutButton {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0 30px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
-.headerControl .arrow img {
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-top: 4px;
+.headerControl .logoutButton:hover {
+  border-color: #e2e2e2;
+  color: #e2e2e2;
+  transition: all 0.2s;
 }
 
 /*# sourceMappingURL=Header.module.css.map */

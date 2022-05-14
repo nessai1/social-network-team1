@@ -11,7 +11,6 @@ type TProps = {
 
 export const Profile = (userInfo: TProps) => {
     const { data: session, status } = useSession();
-    console.log(session, status);
     return (
         <Plato>
             <div className={styles.profile}>
