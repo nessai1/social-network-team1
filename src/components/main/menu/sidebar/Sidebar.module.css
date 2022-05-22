@@ -1,0 +1,7 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+/*# sourceMappingURL=Sidebar.module.css.map */

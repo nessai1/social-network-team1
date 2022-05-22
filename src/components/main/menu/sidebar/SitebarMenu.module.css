@@ -1,0 +1,10 @@
+.linksWrapper {
+  margin: 0;
+  padding: 10px 0;
+}
+.linksWrapper li {
+  display: block;
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=SitebarMenu.module.css.map */

@@ -1,0 +1,26 @@
+.profile {
+  padding: 25px 10px;
+  display: flex;
+}
+
+.userInfo {
+  min-width: 250px;
+  min-height: 50px;
+  margin-left: 20px;
+  display: block;
+}
+.userInfo .text {
+  display: block;
+}
+.userInfo .textName {
+  font-weight: bold;
+  font-size: 20px;
+  color: #031B4E;
+}
+.userInfo .textLink {
+  color: #626B7D;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=Profile.module.css.map */

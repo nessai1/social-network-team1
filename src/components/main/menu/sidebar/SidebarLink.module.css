@@ -1,0 +1,16 @@
+.linkBlock {
+  padding: 20px 30px;
+  color: #465370;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.linkBlock:hover {
+  box-shadow: inset 3px 0 #B7BAC0;
+}
+.linkBlock_active {
+  color: #0069FF;
+  box-shadow: inset 3px 0 #0069FF !important;
+}
+
+/*# sourceMappingURL=SidebarLink.module.css.map */

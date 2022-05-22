@@ -1,0 +1,36 @@
+.cardWrapper {
+  padding: 25px 30px;
+  min-width: 980px;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  width: 100%;
+  display: flex;
+}
+
+.authorData {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.authorData .authorName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #031B4E;
+}
+.authorData .postDate {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #A5A5A5;
+}
+
+.postText {
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #465370;
+}
+
+/*# sourceMappingURL=PostCard.module.css.map */
