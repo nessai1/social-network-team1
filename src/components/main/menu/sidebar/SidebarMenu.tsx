@@ -7,10 +7,12 @@ export const SidebarMenu = () => {
         marginTop: "20px",
     };
 
+    const userId = 1;
+
     return (
         <Plato style={platoStyles}>
             <ul className={styles.linksWrapper}>
-                <Link href={"/me"}>
+                <Link href={"/profile/" + userId}>
                     <li className={styles.linkBlock}>Моя страница</li>
                 </Link>
                 <Link href={"/friends"}>

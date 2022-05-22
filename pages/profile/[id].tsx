@@ -1,10 +1,19 @@
-import { FeedList } from "../src/components/posts/FeedList";
+import { FeedList } from "../../src/components/posts/FeedList";
 import { AppProps } from "next/app";
 import { getSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { Session } from "next-auth";
+import { Profile } from "../../src/components/profile/Profile";
 
-function Feed(props: any) {
-    console.log(props);
-    return <FeedList />;
+type TProps = {
+    session: Session;
+};
+
+function Feed(props: TProps) {
+    const router = useRouter();
+    const { id } = router.query;
+
+    return <Profile userId={Number(id)} />;
 }
 
 export async function getServerSideProps(context: any) {
