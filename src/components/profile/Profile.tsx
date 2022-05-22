@@ -1,3 +1,5 @@
+import { Infobar } from "./Infobar";
+import { Contentbar } from "./Contentbar";
 import { useEffect, useState } from "react";
 
 type TProps = {
@@ -5,5 +7,10 @@ type TProps = {
 };
 
 export const Profile = (props: TProps) => {
-    return <div>Profile {props.userId}</div>;
+    return (
+        <>
+            <Infobar />
+            <Contentbar />
+        </>
+    );
 };
