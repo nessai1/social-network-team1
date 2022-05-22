@@ -343,4 +343,9 @@ body {
   background-color: #f5f5f5;
 }
 
+a {
+  text-underline: none;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=global.css.map */

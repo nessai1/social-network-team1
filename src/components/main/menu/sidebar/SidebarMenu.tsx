@@ -1,30 +1,47 @@
 import { Plato } from "../../base/Plato";
 import styles from "./SitebarMenu.module.scss";
 import Link from "next/link";
+import { SidebarLink } from "./SidebarLink";
 
-export const SidebarMenu = () => {
+type TProps = {
+    page: string;
+};
+
+export const SidebarMenu = (props: TProps) => {
     const platoStyles = {
         marginTop: "20px",
     };
 
     const userId = 1;
+    console.log(props);
 
     return (
         <Plato style={platoStyles}>
             <ul className={styles.linksWrapper}>
                 <Link href={"/profile/" + userId}>
-                    <li className={styles.linkBlock}>Моя страница</li>
+                    <a>
+                        <SidebarLink
+                            isActive={props.page === "profile"}
+                            name={"Моя страница"}
+                        />
+                    </a>
                 </Link>
                 <Link href={"/friends"}>
-                    <li className={styles.linkBlock}>Друзья</li>
+                    <a>
+                        <SidebarLink
+                            isActive={props.page === "friends"}
+                            name={"Друзья"}
+                        />
+                    </a>
                 </Link>
 
                 <Link href={"/feed"}>
-                    <li
-                        className={`${styles.linkBlock} ${styles.linkBlock_active}`}
-                    >
-                        Новости
-                    </li>
+                    <a>
+                        <SidebarLink
+                            isActive={props.page === "feed"}
+                            name={"Новости"}
+                        />
+                    </a>
                 </Link>
             </ul>
         </Plato>
