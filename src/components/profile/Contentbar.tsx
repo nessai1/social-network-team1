@@ -1,3 +1,10 @@
+import styles from "./Contentbar.module.scss";
+import { HeaderContent } from "./HeaderContent";
+
 export const Contentbar = () => {
-    return <>Content</>;
+    return (
+        <div className={styles.userContent}>
+            <HeaderContent />
+        </div>
+    );
 };
