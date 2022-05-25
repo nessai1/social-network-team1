@@ -1,7 +1,20 @@
 .imagesBar {
   height: 200px;
-  margin: 40px 30px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+
+.upperInfo {
+  padding: 40px 30px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.aboutMe {
+  padding: 20px 30px;
+  color: #465370;
+  font-weight: 500;
+  font-size: 15px;
 }
