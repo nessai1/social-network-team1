@@ -1,6 +1,10 @@
 .content {
   padding: 40px 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+}
+
+.renderContent {
+  margin-left: 40px;
 }
 

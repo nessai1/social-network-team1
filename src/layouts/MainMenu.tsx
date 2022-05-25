@@ -34,7 +34,7 @@ export default function MainMenu(props: TProps) {
                     lastName={"Sends"}
                     uId={"rebsends"}
                 />
-                <div>{props.children}</div>
+                <div className={styles.renderContent}>{props.children}</div>
                 <div></div>
             </div>
         </>
