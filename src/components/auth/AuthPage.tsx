@@ -6,7 +6,7 @@ export const AuthPage = (props: any) => {
     return (
         <>
             <div className={styles.authWrapper}>
-                 <SigninPage/>
+                <SigninPage/>
             </div>
         </>
     )
