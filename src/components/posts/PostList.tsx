@@ -1,50 +1,72 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./PostList.module.scss";
-import {FeedItemSkeleton} from "./FeedItemSkeleton";
-import {PostsService, TPost} from "../../lib/api";
-import {PostCard} from "./PostCard";
+import { FeedItemSkeleton } from "./FeedItemSkeleton";
+import { PostsService, TPost } from "../../lib/api";
+import { PostCard } from "./PostCard";
+import Debounce from "../../lib/Debounce";
 
 type TProps = {
-    posts: TPost[],
-    postsIsOver: boolean
-}
+    posts: TPost[];
+    postsIsOver: boolean;
+    offset: number;
+};
 
 export const PostList = () => {
-
-    const [postsData, setPosts] = useState<TProps>({postsIsOver: false, posts: []});
-    const skeletonId = 'skeleton';
+    const limit = 55;
+    const [postsData, setPosts] = useState<TProps>({
+        postsIsOver: false,
+        posts: [],
+        offset: 0,
+    });
+    const skeletonRef = useRef<HTMLDivElement | null>(null);
+    const offset = useRef<number>(0);
+    const debounce = useRef<Debounce>(new Debounce(500));
 
     useEffect(() => {
-
-        const limit = 10;
         const postProvider = new PostsService();
-        postProvider.getItems(0, limit).then((posts) => {
+        postProvider.getItems(offset.current, limit).then((posts) => {
             let postsIsOver;
             postsIsOver = posts.length < limit;
-            setPosts({postsIsOver: postsIsOver, posts: posts});
+            offset.current += limit;
+            setPosts({
+                postsIsOver: postsIsOver,
+                posts: posts,
+                offset: offset.current + limit,
+            });
         });
 
-
-        const scrollListener = (event: Event) => {
-            const skeletonNode = document.querySelector(`#${skeletonId}`);
-            if (skeletonNode === null) {
-                window.removeEventListener('scroll', scrollListener);
+        window.addEventListener("scroll", () => {
+            const skeletonRects = skeletonRef.current?.getClientRects()?.[0]; // спросить Тимура
+            if (!skeletonRects) {
                 return;
             }
+            debounce.current.tryProcess(() => {
+                console.log("DEBOUNCED!!!");
+            });
 
-            console.log(skeletonNode.getClientRects());
-        }
-
-        window.addEventListener('scroll', scrollListener);
-        return () => {
-            window.removeEventListener('scroll', scrollListener);
-        }
+            // if (skeletonRects.y < skeletonRects.height + 600) {
+            //     postProvider.getItems(offset.current, limit).then((posts) => {
+            //         const postsIsOver = posts.length < limit;
+            //         offset.current += limit;
+            //         const newValue = {
+            //             postsIsOver: postsIsOver,
+            //             posts: [...postsData.posts, ...posts],
+            //             offset: offset.current + limit,
+            //         };
+            //         setPosts(newValue);
+            //     });
+            // }
+        });
     }, []);
 
     return (
         <div className={styles.postListWrapper}>
-            {postsData.posts.map(post => (<PostCard key={post.id} post={post}/>))}
-            {postsData.postsIsOver ? '' : <div id={skeletonId}><FeedItemSkeleton/></div>}
+            {postsData.posts.map((post) => (
+                <PostCard key={post.id} post={post} />
+            ))}
+            <div ref={skeletonRef}>
+                <FeedItemSkeleton />
+            </div>
         </div>
-    )
-}
+    );
+};
