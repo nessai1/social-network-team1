@@ -14,7 +14,7 @@ export const SigninPage = (props: any)=> {
             <div className={styles.inputs}>
                 <input className={styles.SignInInput} placeholder={"Email"}/>
                 <input className={styles.SignInInput} placeholder={"Пароль"}/>
-                <span>Забыли пароль? - идите в пизду</span>
+                <span>Забыли пароль?</span>
             </div>
             <button className={styles.buttonSign}>Войти</button>
         </div>

@@ -11,7 +11,7 @@
   background-color: #FFFFFF;
   min-width: 988px;
   min-height: 600px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -50,7 +50,6 @@
 
 .buttonGit{
   font-size: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 7px;
   background-color: #0167d6;
   border: none;
@@ -63,7 +62,6 @@
 
 .buttonSign{
   font-size: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   margin-top: 30px;
   border-radius: 7px;
   background-color: #0eaf52;
