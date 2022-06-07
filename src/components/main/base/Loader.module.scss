@@ -1,0 +1,15 @@
+.loader {
+  animation: loading 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg) translateZ(0);
+    transform: rotate(0deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translateZ(0);
+    transform: rotate(360deg) translateZ(0);
+  }
+}

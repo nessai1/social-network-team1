@@ -3,7 +3,6 @@ import ContentLoader from "react-content-loader";
 import React from "react";
 
 export const FeedItemSkeleton = () => {
-
     return (
         <div>
             <ContentLoader
@@ -24,5 +23,5 @@ export const FeedItemSkeleton = () => {
                 <rect x="244" y="169" rx="0" ry="0" width="322" height="170" />
             </ContentLoader>
         </div>
-    )
-}
+    );
+};
