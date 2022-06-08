@@ -2,8 +2,26 @@ import React from "react";
 import styles from "./AuthPage.module.scss";
 import { signIn } from "next-auth/react";
 
-export const SigninPage = (props: any) => {
-    const providers = props.providers;
+type TProps = {
+    onLogin: Function;
+};
+
+export const SigninPage = (props: TProps) => {
+
+    const callback = props.onLogin;
+
+    const onSubmit = (event: any) => {
+        const target = event.target;
+        const login = target.querySelector('#login').value;
+        const password = target.querySelector('#password').value;
+
+        if (login !== '' && password !== '')
+        {
+            callback({login, password});
+        }
+        event.preventDefault();
+    }
+
     return (
         <div className={styles.signPage}>
             <div className={styles.teamOne}>
@@ -11,23 +29,14 @@ export const SigninPage = (props: any) => {
                 <button className={styles.buttonReg}>Регистрация</button>
             </div>
             <h1>Вход</h1>
-            {Object.values(providers).map((provider: any) => (
-                <div key={provider.name}>
-                    <button
-                        className={styles.buttonGit}
-                        onClick={() => signIn(provider.id)}
-                    >
-                        Войти с помощью {provider.name}
-                    </button>
-                </div>
-            ))}
             <p>или войти с помощью email</p>
-            <div className={styles.inputs}>
-                <input className={styles.SignInInput} placeholder={"Email"} />
-                <input className={styles.SignInInput} placeholder={"Пароль"} />
-                <span>Забыли пароль?</span>
-            </div>
-            <button className={styles.buttonSign}>Войти</button>
+            <form method="post" onSubmit={onSubmit} action='/'>
+                <div className={styles.inputs}>
+                    <input type='text' name='login' id='login' className={styles.SignInInput} placeholder={"Login"} />
+                    <input type='password' name='password' id='password' className={styles.SignInInput} placeholder={"Пароль"} />
+                </div>
+                <button type='submit' className={styles.buttonSign}>Войти</button>
+            </form>
         </div>
     );
 };

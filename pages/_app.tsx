@@ -6,6 +6,7 @@ import { useEffect, useLayoutEffect } from "react";
 import { redirect } from "next/dist/server/api-utils";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+
     if (!session) {
         return (
             <SessionProvider session={session}>

@@ -1,18 +1,42 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import { type } from "os";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 export default NextAuth({
     // Configure one or more authentication providers
     providers: [
-        GithubProvider({
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET,
-        }),
-        // ...add more providers here
+        CredentialsProvider({
+            id: "credentials",
+            name: "credentials",
+            credentials: {
+                username: { label: "Login", type: "text", placeholder: "login" },
+                password: {  label: "Password", type: "password" }
+            },
+            async authorize(credentials, req) {
+
+                const url = 'https://62a08e35a9866630f811ef59.mockapi.io/api/test/login';
+                //const
+                if (credentials.login === '1' && credentials.password === '2')
+                {
+                    return {
+                        name: 'andrey',
+                        id: 1337
+                    };
+                }
+
+                return null;
+            }
+        })
     ],
+    pages: {
+        signIn: '/signin',
+        signOut: '/signout',
+    },
+
     callbacks: {
-        async signIn({ user, account, profile, email, credentials }) {
+        async signIn(obj) {
+            console.log(obj);
             return true;
         },
         async redirect({ url, baseUrl }) {

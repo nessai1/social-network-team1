@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import { Header } from "../components/main/menu/Header";
 import styles from "./MainMenu.module.scss";
 import { Sidebar } from "../components/main/menu/sidebar/Sidebar";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 type TProps = {
@@ -11,7 +10,6 @@ type TProps = {
 };
 
 export default function MainMenu(props: TProps) {
-    const { data: session } = useSession();
     const { asPath: ref } = useRouter();
 
     const pagePath = /\/[A-Z,a-z]*\/?/.exec(ref);
@@ -23,7 +21,7 @@ export default function MainMenu(props: TProps) {
     }
     return (
         <>
-            <Header avatarUrl={session.user.image}></Header>
+            <Header avatarUrl={'https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg'}></Header>
             <div className={styles.content}>
                 <Sidebar
                     page={page}
