@@ -3,10 +3,10 @@ import { AppProps } from "next/app";
 import { getSession } from "next-auth/react";
 import { useSession } from "next-auth/react";
 
-function Feed() {
+function News(props: any) {
     const a = useSession();
-    console.log(a);
-    return <FeedList />;
+    // @ts-ignore
+    return <FeedList token={a.data.user.name} />;
 }
 
 export async function getServerSideProps(context: any) {
@@ -20,8 +20,6 @@ export async function getServerSideProps(context: any) {
         };
     }
 
-    console.log(session);
-
     return {
         props: {
             session: session,
@@ -29,4 +27,4 @@ export async function getServerSideProps(context: any) {
     };
 }
 
-export default Feed;
+export default News;

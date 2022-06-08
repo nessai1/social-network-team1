@@ -17,24 +17,24 @@ export default NextAuth({
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials, req) {
-                const url =
-                    "https://62a08e35a9866630f811ef59.mockapi.io/api/test/login";
+                const url = "http://51.250.105.251:31441/users/signin";
 
                 const data = await fetch(url, {
-                    method: "POST",
+                    method: "post",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify(credentials),
+                    body: JSON.stringify({
+                        username: credentials.login,
+                        password: credentials.password,
+                    }),
                 });
 
                 const jsondata = await data.json();
 
                 if (jsondata.access_token) {
                     return {
-                        name: jsondata.name,
-                        email: jsondata.access_token,
-                        id: Number(jsondata.id),
+                        name: jsondata.access_token,
                     };
                 }
 
@@ -42,9 +42,10 @@ export default NextAuth({
             },
         }),
     ],
+    secret: process.env.NEXT_PUBLIC_SECRET,
     pages: {
-        signIn: "/signin",
-        signOut: "/signout",
+        signIn: "http://51.250.105.251:31441/signin",
+        signOut: "http://51.250.105.251:31441/signout",
     },
 
     callbacks: {

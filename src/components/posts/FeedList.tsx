@@ -7,7 +7,7 @@ export const FeedList = (props: any) => {
     return (
         <>
             <PostEditor />
-            <PostList />
+            <PostList token={props.token} />
         </>
     );
 };

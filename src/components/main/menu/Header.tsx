@@ -17,7 +17,10 @@ export const Header = ({ avatarUrl }: TProps) => {
                 <button
                     className={styles.logoutButton}
                     onClick={() => {
-                        signOut();
+                        signOut({
+                            redirect: true,
+                            callbackUrl: "http://51.250.105.251:31441/",
+                        });
                     }}
                 >
                     Log out

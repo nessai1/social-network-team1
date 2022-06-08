@@ -11,7 +11,7 @@ type TProps = {
     offset: number;
 };
 
-export const PostList = () => {
+export const PostList = (props: any) => {
     const limit = 55;
     const [postsData, setPosts] = useState<TProps>({
         postsIsOver: false,
@@ -24,16 +24,18 @@ export const PostList = () => {
 
     useEffect(() => {
         const postProvider = new PostsService();
-        postProvider.getItems(offset.current, limit).then((posts) => {
-            let postsIsOver;
-            postsIsOver = posts.length < limit;
-            offset.current += limit;
-            setPosts({
-                postsIsOver: postsIsOver,
-                posts: posts,
-                offset: offset.current + limit,
+        postProvider
+            .getItems(offset.current, limit, props.token)
+            .then((posts) => {
+                let postsIsOver;
+                postsIsOver = posts.length < limit;
+                offset.current += limit;
+                setPosts({
+                    postsIsOver: postsIsOver,
+                    posts: posts,
+                    offset: offset.current + limit,
+                });
             });
-        });
 
         window.addEventListener("scroll", () => {
             const skeletonRects = skeletonRef.current?.getClientRects()?.[0]; // спросить Тимура

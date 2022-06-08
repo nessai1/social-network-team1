@@ -19,7 +19,7 @@ export async function getServerSideProps(context: any) {
 
     return {
         redirect: {
-            destination: "/feed",
+            destination: "/news",
             status: 200,
         },
     };

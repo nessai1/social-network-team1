@@ -6,7 +6,6 @@ import { useEffect, useLayoutEffect } from "react";
 import { redirect } from "next/dist/server/api-utils";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-
     if (!session) {
         return (
             <SessionProvider session={session}>
@@ -14,9 +13,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
             </SessionProvider>
         );
     }
+
+    const token = session.user.name;
+
     return (
         <SessionProvider session={session}>
-            <MainMenu>
+            <MainMenu token={token}>
                 <Component {...pageProps} />
             </MainMenu>
         </SessionProvider>

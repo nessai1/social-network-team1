@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { Header } from "../components/main/menu/Header";
 import styles from "./MainMenu.module.scss";
@@ -7,9 +7,11 @@ import { useRouter } from "next/router";
 
 type TProps = {
     children: ReactNode;
+    token: string;
 };
 
 export default function MainMenu(props: TProps) {
+    console.log(props.token, "TOKEN");
     const { asPath: ref } = useRouter();
 
     const pagePath = /\/[A-Z,a-z]*\/?/.exec(ref);
@@ -21,7 +23,11 @@ export default function MainMenu(props: TProps) {
     }
     return (
         <>
-            <Header avatarUrl={'https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg'}></Header>
+            <Header
+                avatarUrl={
+                    "https://c1.35photo.pro/photos_col/r2/376/1883602_500r.jpg"
+                }
+            ></Header>
             <div className={styles.content}>
                 <Sidebar
                     page={page}

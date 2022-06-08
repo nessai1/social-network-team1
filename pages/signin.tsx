@@ -1,23 +1,32 @@
-import {SigninPage} from "../src/components/auth/SigninPage";
+import { SigninPage } from "../src/components/auth/SigninPage";
 import { getSession, signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 type TUserData = {
     password: string;
     login: string;
 };
 
-
 export default function SignIn() {
-
-    const callback = (data: any) => {
-        signIn('credentials', {
-            redirect: true,
-            password: data.password,
-            login: data.login
-        });
+    const router = useRouter();
+    const { error } = router.query;
+    let hasErrors = false;
+    if (error) {
+        hasErrors = true;
     }
+    const callback = (data: any) => {
+        signIn("credentials", {
+            redirect: false,
+            password: data.password,
+            login: data.login,
+        });
 
-    return <SigninPage onLogin={callback}/>
+        setTimeout(() => {
+            window.location.reload();
+        }, 500);
+    };
+
+    return <SigninPage hasErrors={hasErrors} onLogin={callback} />;
 }
 
 export async function getServerSideProps(context: any) {
@@ -25,7 +34,7 @@ export async function getServerSideProps(context: any) {
     if (session) {
         return {
             redirect: {
-                destination: "/feed",
+                destination: "/news",
                 status: 200,
             },
         };
