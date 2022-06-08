@@ -1,9 +1,11 @@
 import { FeedList } from "../src/components/posts/FeedList";
 import { AppProps } from "next/app";
 import { getSession } from "next-auth/react";
-import { useSession} from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 function Feed() {
+    const a = useSession();
+    console.log(a);
     return <FeedList />;
 }
 

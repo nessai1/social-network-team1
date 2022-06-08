@@ -4,34 +4,47 @@ import { type } from "os";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export default NextAuth({
-    // Configure one or more authentication providers
     providers: [
         CredentialsProvider({
             id: "credentials",
             name: "credentials",
             credentials: {
-                username: { label: "Login", type: "text", placeholder: "login" },
-                password: {  label: "Password", type: "password" }
+                username: {
+                    label: "Login",
+                    type: "text",
+                    placeholder: "login",
+                },
+                password: { label: "Password", type: "password" },
             },
             async authorize(credentials, req) {
+                const url =
+                    "https://62a08e35a9866630f811ef59.mockapi.io/api/test/login";
 
-                const url = 'https://62a08e35a9866630f811ef59.mockapi.io/api/test/login';
-                //const
-                if (credentials.login === '1' && credentials.password === '2')
-                {
+                const data = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(credentials),
+                });
+
+                const jsondata = await data.json();
+
+                if (jsondata.access_token) {
                     return {
-                        name: 'andrey',
-                        id: 1337
+                        name: jsondata.name,
+                        email: jsondata.access_token,
+                        id: Number(jsondata.id),
                     };
                 }
 
                 return null;
-            }
-        })
+            },
+        }),
     ],
     pages: {
-        signIn: '/signin',
-        signOut: '/signout',
+        signIn: "/signin",
+        signOut: "/signout",
     },
 
     callbacks: {
@@ -42,12 +55,10 @@ export default NextAuth({
         async redirect({ url, baseUrl }) {
             return baseUrl;
         },
-        async session({ session, user, token }) {
-            console.log("token", token);
-            console.log("user", user);
-            console.log("session", session);
-            session.user.userId = token.sub;
-            return session;
+        async session(q) {
+            q.a = q;
+            q.jopa = 123;
+            return q.session;
         },
         async jwt({ token, user, account, profile, isNewUser }) {
             return token;
